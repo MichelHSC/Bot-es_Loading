@@ -1,0 +1,87 @@
+@keyframes spin {
+    to {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes background-transform {
+    0% {
+        background-color: #FF6400;
+    }
+
+    100% {
+        background-color: #11FF00;
+    }
+}
+
+@keyframes icon-appear {
+    0% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
+        background-color: #11FF00;
+    }
+}
+
+body {
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn-primary {
+    height: 56px;
+    width: 250px;
+    background-color: #ff6400;
+    border-radius: 0.25rem;
+    padding: 12px;
+    border: none;
+    border: 2px solid black;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: background-transform 400ms linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+
+    position: relative;
+
+}
+
+.loading-spinner {
+    width: 24px;
+    height: 24px;
+
+
+    border: 3px solid black;
+    border-radius: 50%;
+    border-bottom-color: #afafaf;
+
+    animation: spin 2s linear infinite;
+}
+
+.check-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #11FF00;
+
+    animation: icon-appear 400ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
